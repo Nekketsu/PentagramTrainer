@@ -1,0 +1,36 @@
+.pentagram {
+    margin-top: 70px;
+    position: relative;
+}
+
+.pentagram hr {
+    margin: 20px 0;
+    color: black;
+    background-color: black;
+    height: 4px;
+}
+
+.clef {
+    position: absolute;
+    font-size: 120pt;
+}
+
+.treble-clef {
+    top: -68px;
+}
+
+.treble-clef::before
+{
+    content: "\1d11e";
+}
+
+.note {
+    position: absolute;
+    font-size: 72pt;
+    left: 100px;
+    top: 26px;
+}
+
+.semibreve::before {
+    content: "\1d15d";
+}
