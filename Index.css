@@ -19,15 +19,23 @@
     top: -68px;
 }
 
-.treble-clef::before
-{
+.treble-clef::before {
     content: "\1d11e";
+}
+
+.bass-clef {
+    font-size: 100pt;
+    top: -55px;
+}
+
+.bass-clef:before {
+    content: "\1d122";
 }
 
 .note {
     position: absolute;
     font-size: 72pt;
-    left: 100px;
+    left: 150px;
     top: 26px;
 }
 

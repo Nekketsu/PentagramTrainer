@@ -3,9 +3,13 @@ function sleep(ms) {
 }
 
 function getRandomNote() {
-    var keys = "defgabc";
+    var keys = "abcdefg";
+    var firstKeys = [ 3, 5 ];
+    var pentagram = parseInt(Math.random() * 2);
+    var firstKey = firstKeys[pentagram];
+
     var value = parseInt(Math.random() * 11);
-    var key = keys[value % keys.length];
+    var key = keys[(firstKey + value) % keys.length];
     
     var top = 26 - 13 * value;
     var element = document.createElement("span");
@@ -13,5 +17,5 @@ function getRandomNote() {
     element.classList.add("semibreve");
     element.style.top = top + "px";
 
-    return { key, element };
+    return { pentagram, key, element };
 }

@@ -3,20 +3,31 @@
         <link rel="stylesheet" type="text/css" href="Index.css">
     </head>
     <body>
-        <div id="pentagram" class="pentagram">
+        <div class="pentagram">
             <span class="clef treble-clef"></span>
-            <!-- <span class="note semibreve"></span> -->
             <hr>
             <hr>
             <hr>
             <hr>
             <hr>
         </div>
+
+        <div class="pentagram">
+            <span class="clef bass-clef"></span>
+            <hr>
+            <hr>
+            <hr>
+            <hr>
+            <hr>
+        </div>
+
         <script type="text/javascript" src="Index.js"></script>
 
         <script>
-            let pentagram = document.getElementById("pentagram");
+            let pentagrams = document.querySelectorAll(".pentagram");
             let note = getRandomNote();
+            let pentagram = pentagrams[note.pentagram];
+
             pentagram.appendChild(note.element);
 
             document.addEventListener("keydown", keyDown);
@@ -25,6 +36,7 @@
                 if (e.key == note.key) {
                     pentagram.removeChild(pentagram.lastChild);
                     note = getRandomNote();
+                    pentagram = pentagrams[note.pentagram];
                     pentagram.appendChild(note.element);
                 }
             }
